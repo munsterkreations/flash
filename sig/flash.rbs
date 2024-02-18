@@ -1,0 +1,38 @@
+# Flash.rbs
+
+# Typed Signature for MyUIFramework module
+module Flash
+  # Represents a basic HTML element
+  class HTMLElement
+    # Set the element's attribute
+    def set_attribute(name: String, value: String): nil; end
+    
+    # Append a child element to the current element
+    def append_child(child: HTMLElement): nil; end
+    
+    # Render the HTML representation of the element
+    def render: String; end
+  end
+
+  # Represents a simple CSS styling
+  class CSSStyle
+    # Set a CSS property and its value
+    def set_property(property: String, value: String): nil; end
+  end
+
+  # Represents an interactive UI component
+  class UIComponent
+    # Initialize the UI component
+    def initialize(id: String); end
+
+    # Set the content of the UI component
+    def set_content(content: String): nil; end
+
+    # Attach an event listener to the UI component
+    def on(event_type: String, &block: Proc): nil; end
+
+    # Render the UI component
+    def render: String; end
+  end
+end
+
