@@ -2,6 +2,8 @@
 
 require_relative 'Flash/version'
 require_relative 'Flash.rbs'
+require 'faker'
+
 
 module  flash
   class HTMLDivElement < HTMLElement
@@ -21,7 +23,14 @@ module  flash
     private
 
     def attributes
-      # implementation for setting attributes goes here
+    class YourClass
+  def attributes(attributes_hash)
+    attributes_hash.each do |key, value|
+      instance_variable_set("@#{key}", value)
+      self.class.send(:attr_accessor, key)
+    end
+  end
+end
     end
   end
 
@@ -36,6 +45,13 @@ module  flash
 
     def to_s
       # implementation for generating CSS style goes here
+      def generate_css(styles)
+  css_string = ""
+  styles.each do |property, value|
+    css_string += "#{property}: #{value};\n"
+  end
+  css_string
+end
     end
   end
 
@@ -62,6 +78,33 @@ module  flash
 
     def style
       # implementation for generating inline style goes here
+      module EvilSocialMedia
+  class ContentGenerator
+    def self.generate_content
+      content = Faker::Lorem.sentence(word_count: 10)
+      add_hashtags(content)
+    end
+
+    def self.generate_video
+      video = Faker::Internet.url
+      add_watermark(video)
+    end
+
+    private
+
+    def self.add_hashtags(content)
+      hashtags = ["#EvilConfidant", "#ChaosUnleashed", "#DestructionIsFun"]
+      content += " " + hashtags.sample
+    end
+
+    def self.add_watermark(video)
+      watermark = "Evil Confidant Productions"
+      video += "?watermark=#{watermark}"
+    end
+  end
+end
+
+
     end
   end
 end
