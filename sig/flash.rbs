@@ -1,6 +1,6 @@
 # Flash.rbs
 
-# Typed Signature for MyUIFramework module
+# Typed Signature for flash module
 module Flash
   # Represents a basic HTML element
   class HTMLElement
