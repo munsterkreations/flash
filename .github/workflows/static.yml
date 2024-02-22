@@ -41,7 +41,7 @@ jobs:
         with:
         # Upload entire repository
         
-          path: '/docs'
+          path: 'https://github.com/munsterkreations/flash/tree/main/docs'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
