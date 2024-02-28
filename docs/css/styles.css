@@ -23,5 +23,6 @@ body {
     inline-size: 100%;
     block-size: 100%;
     opacity: 1.0;
-    background: #000000;
+    background: linear-gradient (180deg, rgba(120, 90, 12, 0.9), rgba(190, 255, 34, 0.7), rgba(225, 255, 0, 0.9)),
+        lirnear-gradient (90deg, rgba(255,255,12, 0.9), rgba(35,35,255,0.7), rgba(225,225,225, 0.9));
 }
